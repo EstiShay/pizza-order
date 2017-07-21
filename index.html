@@ -5,13 +5,37 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Order a pizza from The Melodious Slice</title>
+    <title>Order a pizza from Starry Night</title>
   </head>
   <body>
     <div class="container">
-      <h1>The Melodious Slice</h1>
-      <hr>
+      <h1>Starry Night Pizzeria</h1>
+    </div>
+
+    <div class="main-menu">
+      <ul>
+        <li>MENU</li>
+        <li>PLACE AN ORDER</li>
+        <li>REVIEWS</li>
+        <li>CONTACT</li>
+      </ul>
+    </div>
+
+    <div id="main-content" class="container">
+
       <h3>Place your order</h3>
+      <hr>
+
+      <div class="order-for-purchase well">
+        <h3>Here's your order:</h3>
+        <p></p>
+        <ul>
+          <li><span class="pan-size"></span></li>
+          <li>Toppings: <span class="list-toppings"></span></li>
+
+        </ul>
+        <p>Price: <span class="price-total"></span></p>
+      </div>
 
       <form class="pizza-form">
 
@@ -53,23 +77,21 @@
           </div>
         </div>
 
-        <input type="submit" name="name" value="Order my pizza">
-        <input type="button" name="name" value="Start over" onClick="window.location.reload()">
+        <input type="submit" class="btn btn-primary" value="Total Order">
+        <!-- <input type="submit" class="order-pizza" value="Order pizza"> -->
+        <input type="button" id="purchase" class="btn btn-primary" value="Purchase">
+        <input type="button" class="btn btn-primary" value="Start Over" onClick="window.location.reload()">
       </form>
-
-      <div class="order-for-purchase well">
-        <h3>Here's your order</h3>
-        <p></p>
-        <ul>
-          <li><span class="pan-size"></span></li>
-          <li>Toppings: <span class="list-toppings"></span></li>
-
-        </ul>
-        <p>Price: <span class="price-total"></span></p>
-
-        <input type="submit" name="name" value="Purchase">
+    </div>
+    <div class="order-submit">
+      <div class="container">
+        <h2>Order sent. Thanks for ordering from Starry Night!</h2>
+        <input type="button" class="btn btn-primary" value="New Order" onClick="window.location.reload()">
       </div>
-
+    </div>
+    <div class="footer">
+      <p>Visit us at 1701 Terran Dr, Enterprise, CA</p>
+      <p>Starry night background by ..., <a href="#">Flickr</a>.</p>
     </div>
   </body>
 </html>

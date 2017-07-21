@@ -1,3 +1,94 @@
+body {
+  background-image: url(../starrynight2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-family: "PHOSPHATE";
+  font-size: 65px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: white;
+}
+
+li {
+  font-size: 17px;
+}
+
+.well {
+  font-family: Charter, Optima, sans-serif;
+  background-color: #0b2249;
+  color: white;
+  font-size: 15px;
+}
+
+.main-menu {
+  float: left;
+  margin-left: 10px;
+  margin-right: 5px;
+  font-family: Charter, Optima, sans-serif;
+  background-color: #0b2249;
+  color: white;
+  font-size: 15px;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
 .order-for-purchase {
   display: none;
+  float: right;
+  margin-top: 10em;
+  margin-right: 1em;
+  max-width: 300px;
+}
+
+.order-submit {
+  display: none;
+  color: white;
+  text-align: center;
+  font-family: Charter, Optima, sans-serif;
+}
+
+.checkbox {
+  margin-left: 30px;
+}
+
+.pizza-form {
+  color: white;
+  font-size: 15px;
+}
+
+#main-content {
+  max-width: 700px;
+  background-color: #511717;
+  padding: 2em;
+  border-radius: 5px;
+}
+
+.form-group {
+  font-family: Charter, Optima, sans-serif;
+}
+
+.footer {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+
+}
+
+.btn {
+  background-color: #0b2249;
 }

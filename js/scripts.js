@@ -25,9 +25,10 @@ Pizza.prototype.setPrice = function(panSize) {
 }
 
 
-
 //UI logic
 $(document).ready(function() {
+
+  // var orderNum = 0
 
   $(".pizza-form").submit(function(event) {
     var sizeInput = $("input:radio[name=pizza-size]:checked").val();
@@ -42,10 +43,35 @@ $(document).ready(function() {
     pizzaOrder.price = pizzaOrder.setPrice();
 
     $(".pan-size").text(pizzaOrder.panSize);
-    $(".list-toppings").text(pizzaOrder.toppings);
+    if (toppingsInput.length === 0) {
+      $(".list-toppings").text("None");
+    } else {
+      $(".list-toppings").text(pizzaOrder.toppings);
+    }
     $(".price-total").text("$" + pizzaOrder.price);
     $(".order-for-purchase").show();
 
+    // orderNum += 1
+    // var vars = {};
+    //
+    // var sizeInput = $("input:radio[name=pizza-size]:checked").val();
+    // var toppingsInput = []; $("input:checkbox[name=pizza-toppings]:checked").each(function(){
+    //   var aTopping = $(this).val();
+    //   toppingsInput.push(aTopping);
+    // });
+    //
+    // vars['newOrder' + orderNum] = "hello"
+    //
+    // // var "newOrder" + orderNum = new Pizza(sizeInput, toppingsInput);
+    // // alert(newOrder1.panSize);
+    // // alert(newOrder1.panSize);
+    // // alert(newOrder1.toppings);
     event.preventDefault();
+  });
+
+  $("#purchase").click(function(event) {
+    $(".order-submit").show();
+    $("#main-content").hide();
+    $(".order-for-purchase").hide();
   });
 });
