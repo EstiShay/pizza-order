@@ -9,7 +9,69 @@
   </head>
   <body>
     <div class="container">
-      <h1>Place your order</h1>
+      <h1>The Melodious Slice</h1>
+      <hr>
+      <h3>Place your order</h3>
+
+      <form class="pizza-form">
+
+        <div class="form-group">
+          <label for="pizza-size">What size pizza would you like?</label>
+          <div class="radio" id="pizza-size">
+            <label>
+              <input type="radio" name="pizza-size" value="Small">
+              Small, 12" (1 person, or 2 small appetites)
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="pizza-size" value="Medium">
+              Medium, 14" (2-4 people)
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="pizza-size" value="Large">
+              Large, 16" (4-8 people)
+            </label>
+          </div>
+        </div>
+
+        <!-- <div class="form-group">
+          <label for="pizza-toppings">What would you like on your pizza?</label>
+          <div class="checkbox" id="pizza-toppings">
+            <label>
+              <input type="checkbox" name="pizza-toppings" value="spinach">
+              Spinach
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="pizza-toppings" value="tomatoes">
+              Tomatoes
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="pizza-toppings" value="onions">
+              Onions
+            </label>
+          </div>
+        </div> -->
+
+        <input type="submit" name="name" value="Order my pizza">
+        <input type="button" name="name" value="Start over" onClick="window.location.reload()">
+      </form>
+
+      <div class="order-for-purchase well">
+        <h3>Here's your order</h3>
+        <ul>
+
+        </ul>
+        <p>Price: <span class="price-total"></span></p>
+
+        <input type="submit" name="name" value="Purchase">
+      </div>
 
     </div>
   </body>
