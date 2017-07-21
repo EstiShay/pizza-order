@@ -21,7 +21,7 @@ This program creates an interface that allows a user to order a pizza with vario
 | Create 1 small pizza and return price | Small | $10 |
 | Create 1 pizza, small, medium, or large, and return price | Medium | $15 |
 | Add a topping to any size and return price | Small, onions | $11 |
-| Add variable number of toppings \(up to 5\) and return price | Large, tomatoes, basil | $22 |
+| Add variable number of toppings and return price | Large, tomatoes, basil | $22 |
 | Add variable number of toppings and return price with order details | Large, tomatoes, basil | $22 for a large with basil and tomatoes |
 | Order multiple pizzas and return separate orders with subtotals plus a final total | Small, basil, tomatoes; Large, sausage, onions | $12 for a small with basil and tomatoes, $22 for a large with sausage and onions; Order total: $34 |
 | Vary the price of toppings, grouping by type | Small, tomato \($1\), basil \($2\) | $13 |
