@@ -5,25 +5,23 @@ function Pizza (panSize, toppings) {
   this.price = '';
 }
 
-// Pizza.prototype.setPrice = function(panSize) {
-//   var totalPrice = 0
-//   if (this.panSize === "Small") {
-//     totalPrice += 10;
-//   } else if (this.panSize === "Medium") {
-//     totalPrice += 15;
-//   } else if(this.panSize === "Large") {
-//     totalPrice += 20;
-//   } else {
-//     alert("panSize error");
-//   }
-//
-//   if (this.toppings.length !== 0) {
-//     totalPrice += this.toppings.length;
-//   } else {
-//     alert("toppings length error");
-//   }
-//   return totalPrice;
-// }
+Pizza.prototype.setPrice = function(panSize) {
+  var totalPrice = 0
+  if (this.panSize === "Small") {
+    totalPrice += 10;
+  } else if (this.panSize === "Medium") {
+    totalPrice += 15;
+  } else if (this.panSize === "Large") {
+    totalPrice += 20;
+  }
+
+  if (this.toppings.length !== 0) {
+    totalPrice += this.toppings.length;
+  } else {
+    alert("toppings length error");
+  }
+  return totalPrice;
+}
 
 
 
@@ -37,14 +35,13 @@ $(document).ready(function() {
       toppingsInput.push(aTopping);
     });
     var pizzaOrder = new Pizza(sizeInput, toppingsInput);
-    // pizzaOrder.setPrice();
-    console.log(pizzaOrder.toppings);
+    pizzaOrder.price = pizzaOrder.setPrice();
 
     $("ul").append("<li>" + pizzaOrder.panSize + "</li>");
     $("ul").append("<li>Toppings: " + pizzaOrder.toppings + "</li>");
 
 
-    // $(".price-total").text("$" + pizzaOrder.price);
+    $(".price-total").text("$" + pizzaOrder.price);
     $(".order-for-purchase").show();
 
     event.preventDefault();
