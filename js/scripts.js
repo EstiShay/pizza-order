@@ -37,9 +37,8 @@ $(document).ready(function() {
     var pizzaOrder = new Pizza(sizeInput, toppingsInput);
     pizzaOrder.price = pizzaOrder.setPrice();
 
-    $("ul").append("<li>" + pizzaOrder.panSize + "</li>");
-    $("ul").append("<li>Toppings: " + pizzaOrder.toppings + "</li>");
-
+    $(".pan-size").text(pizzaOrder.panSize);
+    $(".list-toppings").text(pizzaOrder.toppings);
 
     $(".price-total").text("$" + pizzaOrder.price);
     $(".order-for-purchase").show();
