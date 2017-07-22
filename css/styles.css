@@ -39,9 +39,10 @@ h3 {
 .order-for-purchase {
   display: none;
   float: right;
-  margin-top: 10em;
+  margin-top: 1em;
   margin-right: 1em;
   max-width: 300px;
+
 }
 
 .order-submit {
