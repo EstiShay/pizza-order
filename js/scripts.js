@@ -32,6 +32,8 @@ Pizza.prototype.setPrice = function(panSize) {
 //UI logic
 $(document).ready(function() {
 
+var totalCost = 0
+
   $(".pizza-form").submit(function(event) {
     var sizeInput = $("input:radio[name=pizza-size]:checked").val();
     var toppingsInput = []; $("input:checkbox[name=pizza-toppings]:checked").each(function(){
@@ -44,26 +46,31 @@ $(document).ready(function() {
     //Add price to constructor object using price calculator prototype
     pizzaOrder.price = pizzaOrder.setPrice();
 
-    // var fullOrder = new Orders();
-    // fullOrder.push(pizzaOrder);
+    //Order multiple pizzas
+    var fullOrder = new Orders();
+    fullOrder.orderList.push(pizzaOrder);
 
-    // fullOrder.forEach(function() {
-    //   $(".pan-size").text(pizzaOrder.panSize);
-    //   if (toppingsInput.length === 0) {
-    //     $(".list-toppings").text("None");
-    //   } else {
-    //     $(".list-toppings").text(pizzaOrder.toppings);
-    //   }
-    //   $(".subtotals").text("$" + pizzaOrder.price);
-    // });
-    $(".pan-size").text(pizzaOrder.panSize);
-    if (toppingsInput.length === 0) {
-      $(".list-toppings").text("None");
-    } else {
-      $(".list-toppings").text(pizzaOrder.toppings);
-    }
-    $(".price-total").text("$" + pizzaOrder.price);
-    
+    fullOrder.orderList.forEach(function() {
+      $("#your-orders").append("<li>Size: " + pizzaOrder.panSize +"</li>");
+      if (toppingsInput.length === 0) {
+        $("#your-orders").append("<li>Toppings: None</li>");
+      } else {
+        $("#your-orders").append("<li>Toppings: " + pizzaOrder.toppings + "</li>");
+      }
+      $("#your-orders").append("<li>Subtotal: $" + pizzaOrder.price + "</li>");
+      totalCost += pizzaOrder.price;
+      $(".price-total").text("$" + totalCost);
+    });
+
+    //Single order
+    // $(".pan-size").text(pizzaOrder.panSize);
+    // if (toppingsInput.length === 0) {
+    //   $(".list-toppings").text("None");
+    // } else {
+    //   $(".list-toppings").text(pizzaOrder.toppings);
+    // }
+    // $(".price-total").text("$" + pizzaOrder.price);
+
     $(".order-for-purchase").show();
     event.preventDefault();
   });
