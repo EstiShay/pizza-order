@@ -34,7 +34,11 @@ $(document).ready(function() {
 
 var totalCost = 0
 
-  $(".pizza-form").submit(function(event) {
+function clearForm() {
+    document.getElementById("pizza-form").reset();
+}
+
+  $("#pizza-form").submit(function(event) {
     var sizeInput = $("input:radio[name=pizza-size]:checked").val();
     var toppingsInput = []; $("input:checkbox[name=pizza-toppings]:checked").each(function(){
       var aTopping = $(this).val();
@@ -72,6 +76,7 @@ var totalCost = 0
     // $(".price-total").text("$" + pizzaOrder.price);
 
     $(".order-for-purchase").show();
+    clearForm();
     event.preventDefault();
   });
 
@@ -79,5 +84,11 @@ var totalCost = 0
     $(".order-submit").show();
     $("#main-content").hide();
     $(".order-for-purchase").hide();
+  });
+
+  $(".new-order").click(function(event) {
+    $("#main-content").show();
+    clearForm();
+    $(".order-submit").hide();
   });
 });
